@@ -127,6 +127,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    r'C:\Users\HP\Desktop\Codefiles\side\@DMN\DMN_env\Lib\site-packages\django\contrib\admin\templates\admin',
 ]
 STATICFILES_STORAGE =  'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

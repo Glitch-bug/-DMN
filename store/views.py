@@ -18,7 +18,7 @@ def product_detail(request, slug, id):
     product = get_object_or_404(Product, slug=slug, id=id, in_stock=True)
     images = product.images.all()
     serial_product = ProductSerializers(product)
-    seial_images = ImageSerializers(images, many=True)
+    serial_images = ImageSerializers(images, many=True)
     return JsonResponse({"product":serial_product.data, "images":serial_images.data})
 
 def category_list(request, slug):

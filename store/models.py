@@ -19,6 +19,7 @@ class Product(models.Model):
     edited_by = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='last_edited_by', null=True)
     name = models.CharField(max_length=255)
     designer = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
     rating = models.IntegerField(
          validators=[
             MaxValueValidator(5),
@@ -37,6 +38,10 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def cover(self):
+        if self.images.all():
+            return self.images.all()[0].pk
 
 class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")

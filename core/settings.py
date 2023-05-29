@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     #my apps
     'store',
+    'cart',
 
     #third_party
     'rest_framework',

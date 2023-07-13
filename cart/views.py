@@ -14,7 +14,7 @@ def cart_summary(request):
     cart = Cart(request)
     print(type(cart.cart))
     qty = cart.__len__()
-    total = cart.get_absolute_total_price()
+    total = cart.get_abstotal_price()
     return Response({"cart":cart.cart, "total_qty":qty, "total_price":total})
 # spic = {"PK2":"NOT"}
 

@@ -40,7 +40,7 @@ class Cart():
         return sum(item['qty'] for item in self.cart.values())
     
     def get_abstotal_price(self):
-        return sum(Decimal(item['price']) * item['qty'] for item in self.cart.values())
+        return sum(Decimal(item['unit_price']) * item['qty'] for item in self.cart.values())
 
     def delete(self, product):
         """

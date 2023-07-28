@@ -147,7 +147,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 #CSRF
 CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-b2f4.up.railway.app'
+    'https://web-production-b2f4.up.railway.app',
+    "http://localhost:3001"
 ]
 
 # Update database configuration from $DATABASE_URL.

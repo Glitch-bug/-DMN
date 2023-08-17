@@ -29,8 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
+    # "http://localhost:8000",
     "https://web-production-b2f4.up.railway.app",
+    "http://localhost:3001"
 ]
 # Application definition
 
@@ -133,7 +134,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    r'C:\Users\HP\Desktop\Codefiles\side\@DMN\DMN_env\Lib\site-packages\django\contrib\admin\templates\admin',
+    r'/Users/kwabena/Desktop/KOBBY/side/-DMN/DMN_env/lib/python3.11/site-packages/django/contrib/admin/templates/admin',
 ]
 STATICFILES_STORAGE =  'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -146,10 +147,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 #CSRF
-CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-b2f4.up.railway.app',
-    "http://localhost:3001"
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://web-production-b2f4.up.railway.app',
+#     "http://localhost:3001"
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Update database configuration from $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)

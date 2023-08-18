@@ -147,12 +147,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 #CSRF
-# CSRF_TRUSTED_ORIGINS = [
-#     'https://web-production-b2f4.up.railway.app',
-#     "http://localhost:3001"
-# ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-b2f4.up.railway.app',
+    "http://localhost:3002 "
+]
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
 # Update database configuration from $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)

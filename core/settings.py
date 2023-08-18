@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = [
     # "http://localhost:8000",
     "https://web-production-b2f4.up.railway.app",
-    "http://localhost:3001"
+    "http://localhost:3002"
 ]
 # Application definition
 

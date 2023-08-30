@@ -28,7 +28,7 @@ def update_cart(request):
         data = request.data
         if Product.objects.get(id=data['product']['id'], in_stock= True):
             cart.add(data['product'], data['qty'])
-            return Response(status=status.HTTP_200_OK)
+            return Response({'message': "Cart updated successfully"},status=status.HTTP_200_OK,)
         else:
             raise EmptyResultSet
     except Product.DoesNotExist:
@@ -46,7 +46,7 @@ def delete_product(request):
     try:
         data = request.data  
         delete = cart.delete(data['id'])
-        return Response(status=status.HTTP_200_OK)
+        return Response({'message': "Product deleted successfully"},status=status.HTTP_200_OK)
     except EmptyResultSet:
         return Response({'message': "This product is not in the cart"}, status=status.HTTP_404_NOT_FOUND)
     except Exception as e:

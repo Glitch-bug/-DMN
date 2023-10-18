@@ -28,10 +28,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+
+
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://web-production-b2f4.up.railway.app",
-    "http://localhost:3002"
+    "http://localhost:3002",
 ]
 # Application definition
 
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     #my apps
     'store',
     'cart',
+    'account',
 
     #third_party
     'rest_framework',
@@ -115,6 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -129,7 +134,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+AUTH_USER_MODEL = 'account.UserBase'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [

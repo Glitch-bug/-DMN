@@ -135,11 +135,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 AUTH_USER_MODEL = 'account.UserBase'
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    r'/Users/kwabena/Desktop/KOBBY/side/-DMN/DMN_env/lib/python3.11/site-packages/django/contrib/admin/templates/admin',
+    # r'/Users/kwabena/Desktop/KOBBY/side/-DMN/DMN_env/lib/python3.11/site-packages/django/contrib/admin/templates/admin',
 ]
 STATICFILES_STORAGE =  'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

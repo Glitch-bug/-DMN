@@ -20,16 +20,11 @@ class Cart():
         Adding and updating the user cart session data
         """
         product_id = str(product['id'])
-
-        if product_id in self.cart:
-            self.cart[product_id]['qty'] = qty
-            self.cart[product_id]['sb_total_price'] =  int(qty) * float(product['price'])
-        else: 
-            self.cart[product_id] = {
-                'unit_price':str(product['price']),
-                'qty':int(qty),
-                'sb_total_price': int(qty) * float(product['price'])
-            }
+        self.cart[product_id] = {
+            'unit_price':float(product['price']),
+            'qty':int(qty),
+            'sb_total_price': int(qty) * float(product['price'])
+        }
         self.save()
       
     def __len__(self):

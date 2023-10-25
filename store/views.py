@@ -8,7 +8,6 @@ def store_index(request):
     categories = Category.objects.all()
     products = Product.objects.all()
     images = Image.objects.all()
-    print(images)
     serial_categories = CategorySerializers(categories, many=True)
     serial_products = ProductSerializers(products, many=True)
     serial_images = ImageSerializers(images, many=True)

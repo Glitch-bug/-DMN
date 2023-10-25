@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.contrib.auth.models import User
+
+
+from account.models import UserBase
 class Category(models.Model):
     name = models.CharField(max_length=255, db_index=True)
     slug = models.SlugField(max_length=255, unique=True)
@@ -14,8 +16,8 @@ class Category(models.Model):
 
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name="product", on_delete=models.CASCADE)
-    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='products', null=True)
-    edited_by = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='last_edited_by', null=True)
+    created_by = models.ForeignKey(UserBase, on_delete=models.SET_NULL, related_name='products', null=True)
+    edited_by = models.ForeignKey(UserBase, on_delete=models.SET_NULL, related_name='last_edited_by', null=True)
     name = models.CharField(max_length=255)
     designer = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)

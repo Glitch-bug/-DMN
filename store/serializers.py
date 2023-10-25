@@ -12,6 +12,12 @@ class ProductSerializers(serializers.ModelSerializer):
         model = Product
         fields = ['id', 'category', 'name', 'description', 'cover', 'rating', 'price', 'in_stock', 'images']
 
+# def prodSerializer(products):
+#     data =[]
+#     for product in products:
+#         data.append({'id': product.id, 'category':Cproduct.})
+
+
 class ImageSerializers(serializers.ModelSerializer):
     class Meta:
         model = Image

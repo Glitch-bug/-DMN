@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://web-production-9ef0e.up.railway.app",
+    "https://web-production-b2f4.up.railway.app"
     "http://localhost:3002",
 ]
 # Application definition
@@ -154,6 +155,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 #CSRF
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-9ef0e.up.railway.app',
+    "https://web-production-b2f4.up.railway.app",
     "http://localhost:3002 "
 ]
 

@@ -1,0 +1,9 @@
+TODO
+
+Tue 4 Jun: Work on Edit Address
+Tue 4 Jun: Work on Add Address, (create to_dict() method)
+
+Completed 
+Thu 30 May - Tue 4 Jun: Create error message unique to wrong Accounts query
+Sat 13, - Thu 30 May: Work on Account feature
+Wed 8, - Tue 12, May: add handle_exception to all views

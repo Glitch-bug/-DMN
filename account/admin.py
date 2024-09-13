@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import UserBase, Address 
+
+
+@admin.register(UserBase)
+class UserBaseAdmin(admin.ModelAdmin):
+    pass
+@admin.register(Address)
+class AddressAdmin(admin.ModelAdmin):
+    pass

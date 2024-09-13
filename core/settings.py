@@ -34,8 +34,9 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://web-production-9ef0e.up.railway.app",
-    "https://web-production-b2f4.up.railway.app"
+    "https://web-production-b2f4.up.railway.app",
     "http://localhost:3002",
+    "http://*"
 ]
 # Application definition
 
@@ -74,7 +75,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,7 +157,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-9ef0e.up.railway.app',
     "https://web-production-b2f4.up.railway.app",
-    "http://localhost:3002 "
+    "http://localhost:3002"
+    "*"
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True
@@ -164,3 +166,11 @@ CSRF_TRUSTED_ORIGINS = [
 # Update database configuration from $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = "aaxzxjzcretnmaef"
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kwabenayiadom271@gmail.com'
